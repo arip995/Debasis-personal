@@ -25,14 +25,8 @@ export default axiosInstance;
 
 // Helper function to get the cookie value
 const getCookie = name => {
-  const cookies = document.cookie.split(';');
-  for (const cookie of cookies) {
-    const [key, value] = cookie.trim().split('=');
-    if (key === name) {
-      return value;
-    }
-  }
-  return null;
+  const user = JSON.parse(localStorage.getItem('user'));
+  return user.token;
 };
 
 //Example
